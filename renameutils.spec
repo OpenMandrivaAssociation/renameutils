@@ -9,7 +9,6 @@ Release: %{release}
 Source: http://savannah.nongnu.org/download/renameutils/%{name}-%{version}.tar.bz2
 Group: File tools
 URL: http://www.nongnu.org/renameutils/
-BuildRoot: %{_tmppath}/%{name}-buildroot
 License: GPL
 
 %description
