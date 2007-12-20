@@ -10,6 +10,7 @@ Source: http://savannah.nongnu.org/download/renameutils/%{name}-%{version}.tar.b
 Group: File tools
 URL: http://www.nongnu.org/renameutils/
 License: GPL
+BuildRequires: readline-devel
 
 %description
 The file renaming utilities (renameutils for short) are a set of programs 
