@@ -1,16 +1,12 @@
-%define name renameutils
-%define version 0.8.1
-%define release %mkrel 1
-
-Name: %{name}
-Summary: Set of programs designed to make renaming of multiple files faster
-Version: %{version}
-Release: %{release}
-Source: http://savannah.nongnu.org/download/renameutils/%{name}-%{version}.tar.bz2
-Group: File tools
-URL: http://www.nongnu.org/renameutils/
-License: GPL
-BuildRequires: readline-devel
+Summary:	Set of programs designed to make renaming of multiple files faster
+Name:		renameutils
+Version:	0.9.0
+Release:	%mkrel 1
+Group:		File tools
+URL:		http://www.nongnu.org/renameutils/
+Source:		http://savannah.nongnu.org/download/renameutils/%{name}-%{version}.tar.bz2
+License:	GPLv2+
+BuildRequires:	readline-devel
 
 %description
 The file renaming utilities (renameutils for short) are a set of programs 
@@ -25,26 +21,26 @@ library. This is also useful when renaming files in Midnight Commander,
 where the whole filename has to be entered again.
 
 %prep
-rm -rf $RPM_BUILD_ROOT
-
 %setup -q
 
 %build
-%configure
+%configure2_5x \
+	--disable-rpath
 
 %make
 
 %install
-%makeinstall
+rm -rf %{buildroot}
+%makeinstall_std
 
 %find_lang %name
 
 %clean
-rm -rf $RPM_BUILD_ROOT 
+rm -rf %{buildroot}
 
 %files -f %name.lang
 %defattr(-,root,root)
-%doc COPYING README ABOUT-NLS AUTHORS ChangeLog INSTALL NEWS TODO
-%_bindir/*
-%_mandir/man1/*
+%doc README AUTHORS ChangeLog NEWS TODO
+%{_bindir}/*
+%{_mandir}/man1/*
 
