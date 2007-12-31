@@ -3,10 +3,11 @@ Name:		renameutils
 Version:	0.9.0
 Release:	%mkrel 1
 Group:		File tools
+License:	GPLv2+
 URL:		http://www.nongnu.org/renameutils/
 Source:		http://savannah.nongnu.org/download/renameutils/%{name}-%{version}.tar.bz2
-License:	GPLv2+
-BuildRequires:	readline-devel
+BuildRequires:	libreadline-devel
+BuildRequires:	libtermcap-devel
 
 %description
 The file renaming utilities (renameutils for short) are a set of programs 
@@ -33,14 +34,13 @@ where the whole filename has to be entered again.
 rm -rf %{buildroot}
 %makeinstall_std
 
-%find_lang %name
+%find_lang %{name}
 
 %clean
 rm -rf %{buildroot}
 
-%files -f %name.lang
+%files -f %{name}.lang
 %defattr(-,root,root)
 %doc README AUTHORS ChangeLog NEWS TODO
 %{_bindir}/*
 %{_mandir}/man1/*
-
