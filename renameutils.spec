@@ -3,6 +3,7 @@ Name:		renameutils
 Version:	0.9.0
 Release:	%mkrel 1
 Group:		File tools
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	GPLv2+
 URL:		http://www.nongnu.org/renameutils/
 Source:		http://savannah.nongnu.org/download/renameutils/%{name}-%{version}.tar.bz2
