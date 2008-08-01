@@ -1,7 +1,7 @@
 Summary:	Set of programs designed to make renaming of multiple files faster
 Name:		renameutils
 Version:	0.9.0
-Release:	%mkrel 3
+Release:	%mkrel 4
 Group:		File tools
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	GPLv2+
