@@ -1,14 +1,14 @@
 Summary:	Set of programs designed to make renaming of multiple files faster
 Name:		renameutils
-Version:	0.9.0
-Release:	%mkrel 4
+Version:	0.10.0
+Release:	%mkrel 1
 Group:		File tools
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	GPLv2+
 URL:		http://www.nongnu.org/renameutils/
 Source:		http://savannah.nongnu.org/download/renameutils/%{name}-%{version}.tar.bz2
 BuildRequires:	libreadline-devel
 BuildRequires:	libtermcap-devel
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The file renaming utilities (renameutils for short) are a set of programs 
