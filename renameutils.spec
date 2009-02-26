@@ -1,7 +1,7 @@
 Summary:	Set of programs designed to make renaming of multiple files faster
 Name:		renameutils
 Version:	0.10.0
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		File tools
 License:	GPLv2+
 URL:		http://www.nongnu.org/renameutils/
