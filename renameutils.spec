@@ -1,14 +1,15 @@
 Summary:	Set of programs designed to make renaming of multiple files faster
 Name:		renameutils
-Version:	0.10.0
-Release:	%mkrel 4
+Version:	0.12.0
+Release:	1
 Group:		File tools
 License:	GPLv2+
 URL:		http://www.nongnu.org/renameutils/
-Source:		http://savannah.nongnu.org/download/renameutils/%{name}-%{version}.tar.bz2
-BuildRequires:	libreadline-devel
-BuildRequires:	libtermcap-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Source0:	http://savannah.nongnu.org/download/renameutils/%{name}-%{version}.tar.gz
+BuildRequires:	readline-devel
+BuildRequires:	termcap-devel
+Patch0:		renameutils-0.12.0-typo.patch
+Patch1:		renameutils-0.12-type2.patch
 
 %description
 The file renaming utilities (renameutils for short) are a set of programs 
@@ -24,6 +25,8 @@ where the whole filename has to be entered again.
 
 %prep
 %setup -q
+%patch0 -p1
+%patch1 -p1
 
 %build
 %configure2_5x \
@@ -32,16 +35,11 @@ where the whole filename has to be entered again.
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
-%find_lang %{name}
-
-%clean
-rm -rf %{buildroot}
+%find_lang %{name} --all-name
 
 %files -f %{name}.lang
-%defattr(-,root,root)
 %doc README AUTHORS ChangeLog NEWS TODO
 %{_bindir}/*
 %{_mandir}/man1/*
