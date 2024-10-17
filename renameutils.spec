@@ -4,7 +4,7 @@ Version:	0.12.0
 Release:	2
 Group:		File tools
 License:	GPLv2+
-URL:		http://www.nongnu.org/renameutils/
+URL:		https://www.nongnu.org/renameutils/
 Source0:	http://savannah.nongnu.org/download/renameutils/%{name}-%{version}.tar.gz
 BuildRequires:	readline-devel
 BuildRequires:	termcap-devel
