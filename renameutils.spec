@@ -6,6 +6,11 @@ Group:		File tools
 License:	GPLv2+
 URL:		https://www.nongnu.org/renameutils/
 Source0:	http://savannah.nongnu.org/download/renameutils/%{name}-%{version}.tar.gz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	readline-devel
 BuildRequires:	termcap-devel
 Patch0:		renameutils-0.12.0-typo.patch
